@@ -1,0 +1,40 @@
+[package]
+name = "ouroboros-plasma"
+version = "0.1.0"
+edition = "2021"
+authors = ["ZengLLQ"]
+description = "Computational Tokamak Fusion Plasma Transport, Grad-Shafranov Equilibrium & Toroidal Alfvén Eigenmodes in Rust"
+repository = "https://github.com/ZengLLQ/ouroboros-plasma"
+license = "MIT OR Apache-2.0"
+keywords = [
+    "fusion-energy",
+    "plasma-physics",
+    "tokamak",
+    "magnetohydrodynamics",
+    "grad-shafranov",
+]
+categories = ["science", "simulation", "mathematics"]
+
+[lib]
+name = "ouroboros_plasma"
+path = "src/lib.rs"
+
+[[bin]]
+name = "ouroboros-plasma"
+path = "src/main.rs"
+
+[[example]]
+name = "tokamak_equilibrium_and_tae_spectrum"
+path = "examples/tokamak_equilibrium_and_tae_spectrum.rs"
+
+[[example]]
+name = "relativistic_alpha_particle_confinement"
+path = "examples/relativistic_alpha_particle_confinement.rs"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[dev-dependencies]
+approx = "0.5"
